@@ -1,6 +1,6 @@
 package com.saradahhou.newsapp.api
 
-import com.saradahhou.newsapp.data.NewsResponse
+import com.saradahhou.newsapp.data.models.NewsResponse
 import com.saradahhou.newsapp.utils.Config.Companion.API_KEY
 import retrofit2.Response
 import retrofit2.http.GET

@@ -1,4 +1,4 @@
-package com.saradahhou.newsapp.data
+package com.saradahhou.newsapp.data.models
 
 data class NewsResponse(
     val articles: List<Article>,
