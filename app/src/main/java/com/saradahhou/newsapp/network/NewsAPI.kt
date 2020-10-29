@@ -1,4 +1,4 @@
-package com.saradahhou.newsapp.api
+package com.saradahhou.newsapp.network
 
 import com.saradahhou.newsapp.data.models.NewsResponse
 import com.saradahhou.newsapp.utils.Config.Companion.API_KEY

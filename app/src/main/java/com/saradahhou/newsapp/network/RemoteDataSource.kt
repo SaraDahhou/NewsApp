@@ -1,4 +1,4 @@
-package com.saradahhou.newsapp.api
+package com.saradahhou.newsapp.network
 
 import com.saradahhou.newsapp.utils.Config.Companion.BASE_URL
 import okhttp3.OkHttpClient
