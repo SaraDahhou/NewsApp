@@ -48,5 +48,12 @@
         android:id="@+id/articleFragment"
         android:name="com.saradahhou.newsapp.ui.fragments.ArticleFragment"
         android:label="fragment_article"
-        tools:layout="@layout/fragment_article" />
+        tools:layout="@layout/fragment_article" >
+        <argument
+            android:name="currentArticle"
+            app:argType="com.saradahhou.newsapp.data.models.Article" />
+        <action
+            android:id="@+id/action_articleFragment_to_breakingNewsFragment"
+            app:destination="@id/breakingNewsFragment" />
+    </fragment>
 </navigation>
