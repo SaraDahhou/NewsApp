@@ -1,6 +1,7 @@
 package com.saradahhou.newsapp.data.repository
 
 import com.saradahhou.newsapp.data.db.ArticleDatabase
+import com.saradahhou.newsapp.data.models.Article
 import com.saradahhou.newsapp.network.RemoteDataSource
 
 /**
@@ -16,4 +17,10 @@ class NewsRepository(
 
     suspend fun searchNews(searchQuery: String, pageNumber: Int) =
         RemoteDataSource.api.searchForNews(searchQuery, pageNumber)
+
+    suspend fun insertArticle(article: Article) = db.getArticleDoa().insert(article)
+
+    suspend fun deleteArticle(article: Article) = db.getArticleDoa().deleteArticle(article)
+
+    fun getSavedNews() = db.getArticleDoa().getAllArticles()
 }

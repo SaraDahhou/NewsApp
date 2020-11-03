@@ -55,5 +55,8 @@
         <action
             android:id="@+id/action_articleFragment_to_breakingNewsFragment"
             app:destination="@id/breakingNewsFragment" />
+        <action
+            android:id="@+id/action_articleFragment_to_savedNewsFragment"
+            app:destination="@id/savedNewsFragment" />
     </fragment>
 </navigation>

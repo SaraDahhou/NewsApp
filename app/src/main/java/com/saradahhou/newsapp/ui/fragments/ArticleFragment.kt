@@ -6,6 +6,7 @@ import android.webkit.WebViewClient
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
+import com.google.android.material.snackbar.Snackbar
 import com.saradahhou.newsapp.R
 import com.saradahhou.newsapp.ui.NewsActivity
 import com.saradahhou.newsapp.ui.NewsViewModel
@@ -19,7 +20,7 @@ import kotlinx.android.synthetic.main.fragment_article.*
 class ArticleFragment : Fragment(R.layout.fragment_article) {
 
     lateinit var viewModel: NewsViewModel
-    val args: ArticleFragmentArgs by navArgs()
+    private val args: ArticleFragmentArgs by navArgs()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -32,10 +33,14 @@ class ArticleFragment : Fragment(R.layout.fragment_article) {
             it.setDisplayHomeAsUpEnabled(true)
         }
 
-
         webView.apply {
             webViewClient = WebViewClient()
             loadUrl(article.url)
+        }
+
+        saveButton.setOnClickListener {
+            viewModel.saveArticle(article)
+            Snackbar.make(view, "Article saved", Snackbar.LENGTH_SHORT).show()
         }
     }
 
@@ -47,6 +52,5 @@ class ArticleFragment : Fragment(R.layout.fragment_article) {
             it.setDisplayHomeAsUpEnabled(false)
         }
     }
-    
 
 }
